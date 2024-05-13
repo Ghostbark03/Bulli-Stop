@@ -6,24 +6,24 @@ using TMPro;
 
 public class InserisciDati : MonoBehaviour
 {
-    //Script che chiede l' inserimento del nome e del cognome e abilta bottone per andare sull' introduzione
+    //Script che chiede l' inserimento del nome  del cognome e altri dati e abilta bottone per andare sull' introduzione
     public TMP_InputField inputFieldnome;
     public TMP_InputField inputFieldCognome;
     public Button ButtonAvanti;
     public bool inserimentoNome=false;
     public bool inserimentoCognome=false;
-    public bool inserimentoNazionalità = false;
+    public bool inserimentoNazionalitï¿½ = false;
     public bool inserimentoBullismo = false;
     public bool inserimentoSesso = false;
-    public TMP_Dropdown DropdownNazionalità;
+    public TMP_Dropdown DropdownNazionalitï¿½;
     public TMP_Dropdown DropdownBullismo;
     public TMP_Dropdown DropdownSesso;
     public TextMeshProUGUI AvvisoText;
     public void Start()
     {
-        //Il bottone è visibile solo quando sono stati inseriti nome e cognome
+        //Il bottone ï¿½ visibile solo quando sono stati inseriti nome e cognome
         ButtonAvanti.gameObject.SetActive(false);
-        //metto a 0 così i dati di partite precedenti vengono persi
+        //metto a 0 cosï¿½ i dati di partite precedenti vengono persi
         PlayerPrefs.SetInt("gioco", 0);
         PlayerPrefs.SetInt("RaccogliOggetti", 0);
         PlayerPrefs.SetInt("PersonaPiange", 0);
@@ -32,13 +32,13 @@ public class InserisciDati : MonoBehaviour
     private void Update()
     {
         //se  i metodi sono stati chiamati e i campi sono stati compilati abilito il bottone
-        if (inserimentoNome == true && inserimentoCognome == true && inserimentoNazionalità == false&&inserimentoBullismo==false&&inserimentoSesso==false)
+        if (inserimentoNome == true && inserimentoCognome == true && inserimentoNazionalitï¿½ == false&&inserimentoBullismo==false&&inserimentoSesso==false)
         {
             ButtonAvanti.gameObject.SetActive(true);
             AvvisoText.gameObject.SetActive(false);
-            //seleziono le opzioni di default così se non seleziona nessuna opzione si
+            //seleziono le opzioni di default cosï¿½ se non seleziona nessuna opzione si
             //prendono quelle di default
-            PlayerPrefs.SetString("NazionalitàPlayer", "Italia");
+            PlayerPrefs.SetString("Nazionalitï¿½Player", "Italia");
             PlayerPrefs.SetString("BullismoPlayer", "Si");
             PlayerPrefs.SetString("SessoPlayer", "Maschio");
         }
@@ -80,21 +80,21 @@ public class InserisciDati : MonoBehaviour
         }
         
     }
-    public void InsertNazionalità()
+    public void InsertNazionalitï¿½()
     {
         //ricavo l' opzione selezionata tramite il suo indice
-        //value è l' indice dell' opzione selezionata
-        int indice = DropdownNazionalità.value;
-        string nazionalità = DropdownNazionalità.options[indice].text;
-        Debug.Log("Nazionalità: " + nazionalità);
-        PlayerPrefs.SetString("NazionalitàPlayer", nazionalità);
-        inserimentoNazionalità = true;
+        //value ï¿½ l' indice dell' opzione selezionata
+        int indice = DropdownNazionalitï¿½.value;
+        string nazionalitï¿½ = DropdownNazionalitï¿½.options[indice].text;
+        Debug.Log("Nazionalitï¿½: " + nazionalitï¿½);
+        PlayerPrefs.SetString("Nazionalitï¿½Player", nazionalitï¿½);
+        inserimentoNazionalitï¿½ = true;
         
     }
     public void InsertBullismo()
     {
         //ricavo l' opzione selezionata tramite il suo indice
-        //value è l' indice dell' opzione selezionata
+        //value ï¿½ l' indice dell' opzione selezionata
         int indice = DropdownBullismo.value;
         string bullismo = DropdownBullismo.options[indice].text;
         Debug.Log("Bullismo: " + bullismo);
@@ -104,7 +104,7 @@ public class InserisciDati : MonoBehaviour
     public void InsertSesso()
     {
         //ricavo l' opzione selezionata tramite il suo indice
-        //value è l' indice dell' opzione selezionata
+        //value ï¿½ l' indice dell' opzione selezionata
         int indice = DropdownSesso.value;
         string sesso = DropdownSesso.options[indice].text;
         Debug.Log("Sesso: " + sesso);
