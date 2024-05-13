@@ -44,7 +44,7 @@ public class InserisciDati : MonoBehaviour
         }
         
     }
-
+    //inserisco i dati
     public void InsertName(string nome)
     {
         
